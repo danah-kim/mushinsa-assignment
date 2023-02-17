@@ -1,4 +1,4 @@
-import { CharactersPage } from './CharactersPage';
+import CharactersPage from 'pages/CharactersPage';
 import { Route, Routes as ReactRouterRoutes, Navigate } from 'react-router-dom';
 
 export const Routes = () => {

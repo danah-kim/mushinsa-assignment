@@ -16,10 +16,8 @@ function Card({ className, title, contentTop, contentBottom, actions }: CardProp
         <div>
           {title && <h2 className="card-title">{title}</h2>}
           <div className={'flex gap-x-2 justify-between'}>
-            <div>
-              <p>{contentTop}</p>
-              {contentBottom && <p>{contentBottom}</p>}
-            </div>
+            {contentTop}
+            {contentBottom}
           </div>
         </div>
         <div className="card-actions justify-end items-center">{actions}</div>
