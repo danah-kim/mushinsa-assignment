@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import cn from 'classnames';
+import { forwardRef } from 'react';
 
 interface ListRowProps {
   className?: string;
@@ -8,13 +9,17 @@ interface ListRowProps {
   onClick?: () => void;
 }
 
-const ListRow = ({ className, contents, right, onClick }: ListRowProps) => {
+const ListRow = forwardRef<HTMLLIElement, ListRowProps>(function ListRow({ className, contents, right, onClick }, ref) {
   return (
-    <li className={cn('flex justify-between items-center first-of-type:mt-0 mt-4', className)} onClick={onClick}>
+    <li
+      ref={ref}
+      className={cn('flex justify-between items-center first-of-type:mt-0 mt-4', className)}
+      onClick={onClick}
+    >
       {contents}
       {right}
     </li>
   );
-};
+});
 
 export default ListRow;
